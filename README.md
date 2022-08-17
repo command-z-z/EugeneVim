@@ -1,6 +1,6 @@
-# EugeneNvim
+# EugeneTermial
 
-# My Neovim Config
+# My Terminal Config
 
 ## Try out this config
 
@@ -8,18 +8,21 @@ Make sure to remove or move your current `nvim` directory
 
 ```sh
 mkdir ~/.config/
-git clone https://github.com/command-z-z/EugeneNvim.git ~/.config/
+git clone https://github.com/command-z-z/EugeneNvim.git
 ```
 
 Run `nvim` and wait for the plugins to be installed
 
 **NOTE:** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim)
 
-## Use install.sh
+## Use zsh config
 
-I also write a install script, you can easier install my config
+run following code install my zsh config
 
+```
+./install_zsh.sh
 
+```
 
 ## Get healthy
 

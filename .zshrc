@@ -123,7 +123,7 @@ alias mysql=/usr/local/mysql/bin/mysql
 alias ls='lsd'
 alias vim='nvim'
 alias ra='ranger'
-alias nav='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias raj='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
 export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
@@ -144,3 +144,5 @@ bindkey '^l'  forward-char          #control+l：向右移动一个单词
 bindkey '^k'  up-line-or-history    #control+k：向上翻看历史记录
 bindkey '^j'  down-line-or-history  #control+j：向下翻看历史记录
 
+# lsd path
+export PATH=$PATH:/usr/local/lsd/
