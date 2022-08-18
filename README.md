@@ -2,18 +2,13 @@
 
 # My Terminal Config
 
-<!-- ## Try out this config
+## Try out this config
 
 Make sure to remove or move your current `nvim` directory
 
 ```sh
-mkdir ~/.config/
-git clone https://github.com/command-z-z/EugeneNvim.git
+git clone https://github.com/command-z-z/EugeneTerminal.git
 ```
-
-Run `nvim` and wait for the plugins to be installed
-
-**NOTE:** (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) -->
 
 ## Use zsh config
 
@@ -21,7 +16,6 @@ run following code install my zsh config
 
 ```
 ./install_zsh.sh
-
 ```
 
 ## Use ranger config
@@ -30,7 +24,6 @@ run following code install my ranger config
 
 ```
 ./install_ranger.sh
-
 ```
 
 ## Use nvim config
@@ -40,8 +33,13 @@ run following code install my nvim config
 ```
 ./install_nvim.sh
 ```
+### Install plugin
 
 Now, you can `cd ~/.config/nvim/lua/plugins.lua`, and type `:PackerInstall`
+
+### Install code completion
+
+Now, you can enter nvim, and type `:LspInstall language`, such as `:LspInstall pyright` for python.
 
 So, try my config quick!
 
@@ -63,9 +61,9 @@ And you can see all my blogs with Keymap and how to install for nvim in followin
 
 Open `nvim` and enter the following:
 
-```
-:checkhealth
-```
+  ```
+  :checkhealth
+  ```
 
 
 - Neovim python support
@@ -82,13 +80,13 @@ Open `nvim` and enter the following:
   ```
 - Neovim ranger support
 
-```sh
-pip3 install Ranger-fm
-```
+  ```sh
+  pip3 install Ranger-fm
+  ```
 
 - Neovim telescope support
 
-```sh
-yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
-yum install ripgrep
-```
+  ```sh
+  yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
+  yum install ripgrep
+  ```
