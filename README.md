@@ -24,6 +24,15 @@ run following code install my zsh config
 
 ```
 
+## Use ranger config
+
+run following code install my ranger config
+
+```
+./install_ranger.sh
+
+```
+
 ## Get healthy
 
 Open `nvim` and enter the following:
