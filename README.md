@@ -13,25 +13,25 @@
 </h1>
 
 <p align="center">
-  <a href="https://github.com/command-z-z/nvim/stargazers">
+  <a href="https://github.com/command-z-z/EugeneVim/stargazers">
     <img
       alt="Stargazers"
-      src="https://img.shields.io/github/stars/command-z-z/nvim?style=for-the-badge&logo=starship&color=c678dd&logoColor=d9e0ee&labelColor=282a36"
+      src="https://img.shields.io/github/stars/command-z-z/EugeneVim?style=for-the-badge&logo=starship&color=c678dd&logoColor=d9e0ee&labelColor=282a36"
     />
   </a>
-  <a href="https://github.com/command-z-z/nvim/issues">
+  <a href="https://github.com/command-z-z/EugeneVim/issues">
     <img
       alt="Issues"
-      src="https://img.shields.io/github/issues/command-z-z/nvim?style=for-the-badge&logo=gitbook&color=f0c062&logoColor=d9e0ee&labelColor=282a36"
+      src="https://img.shields.io/github/issues/command-z-z/EugeneVim?style=for-the-badge&logo=gitbook&color=f0c062&logoColor=d9e0ee&labelColor=282a36"
     />
   </a>
-  <a href="https://github.com/command-z-z/nvim/contributors">
+  <a href="https://github.com/command-z-z/EugeneVim/contributors">
     <img
       alt="Contributors"
-      src="https://img.shields.io/github/contributors/command-z-z/nvim?style=for-the-badge&logo=opensourceinitiative&color=abcf84&logoColor=d9e0ee&labelColor=282a36"
+      src="https://img.shields.io/github/contributors/command-z-z/EugeneVim?style=for-the-badge&logo=opensourceinitiative&color=abcf84&logoColor=d9e0ee&labelColor=282a36"
     />
   </a>
-  <a href="https://github.com/glepnir/nvim/blob/master/LICENSE"
+  <a href="https://github.com/command-z-z/EugeneVim/blob/master/LICENSE"
     ><img
       src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=282a36&colorB=c678dd"
   /></a>
@@ -62,17 +62,7 @@
 
 ## 💭 About
 
-Hi there is my personal neovim config with neovim nightly, because i'm neovim member
-
-If you like my config and want to use it, Please see my other project [Cosynvim](https://github.com/glepnir/cosynvim), Cosy based on
-
-my config and have a detailed documentation tutorial. I don't like install too many plugins,It will 
-
-make my neovim very slow and wired. so I prefer to write it by my self.
-
-Don't limit yourself.
-
-&nbsp;
+Hi there is my personal neovim config with neovim nightly.
 
 <p align="center">
   Copyright &copy; 2023-present
