@@ -38,7 +38,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/41671631/218739020-a4f04ecc-7bfd-4672-9044-6779989d408b.png"
+  <img src="./img/dashboard.png"
   height = "40%"
   widht = "40%"
   />
@@ -46,19 +46,35 @@
 
 ## 🎁 Features
 
-- Fastest startup time in 20-35ms.
+- Fastest startup time in 80-100ms.
 
 - Modern structure
+
+- 50 plus plugin
   
 - Lightweight
 
-- cli bot support
+## 🔌 Main Plugin
 
-## Neovim Bot usage
+1.LSP
+
+2.DAP
+
+3.UI
+
+4.CODE
+
+5.TOOL
+
+## 🍭 Usage
 
 ```
-~/.config/nvim/dope help
+git clone https://github.com/command-z-z/EugeneVim.git ~/.config/nvim
 ```
+
+>NOTE:back up your nvim config first.
+
+## 🔑 Keymap
 
 ## 💭 About
 

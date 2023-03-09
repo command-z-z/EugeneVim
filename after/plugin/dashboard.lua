@@ -41,6 +41,8 @@ local custom_header = {
     '',
     '',
     '',
+    '',
+    '',
 }
 local custom_center = {
     {icon = "  ", icon_hl = 'Title', desc = "File Oldfiles               ", desc_hl = 'String', key = "SPC f o", key_hl = 'Number', action = "Telescope oldfiles theme=dropdown previewer=false"},
@@ -52,7 +54,7 @@ local custom_center = {
     {icon = "  ", icon_hl = 'Title', desc = "Open Personal dotfiles      ", desc_hl = 'String', key = "SPC e e", key_hl = 'Number', action = "edit $MYVIMRC"},
 }
 local custom_footer = function()
-    local footer = {'','','🎉 Someday I will just like you'}
+    local footer = {'','','','','','🎉 Someday I will just like you'}
     -- print(footer)
     return footer
 end
