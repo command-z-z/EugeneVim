@@ -46,7 +46,6 @@ local custom_header = {
 }
 local custom_center = {
     {icon = "  ", icon_hl = 'Title', desc = "File Oldfiles               ", desc_hl = 'String', key = "SPC f o", key_hl = 'Number', action = "Telescope oldfiles theme=dropdown previewer=false"},
-    -- {icon = "洛 ", icon_hl = 'Title', desc = "New File                    ", desc_hl = 'String', key = "SPC f h", key_hl = 'Number', action = "DashboardNewFile"},
     {icon = "  ", icon_hl = 'Title', desc = "Find File                   ", desc_hl = 'String', key = "SPC f f", key_hl = 'Number', action = "Telescope find_files find_command=rg,--hidden,--files"},
     {icon = "  ", icon_hl = 'Title', desc = "File Browser                ", desc_hl = 'String', key = "SPC f b", key_hl = 'Number', action = "Telescope file_browser theme=dropdown previewer=false"},
     {icon = "  ", icon_hl = 'Title', desc = "Find Word                   ", desc_hl = 'String', key = "SPC f g", key_hl = 'Number', action = "Telescope live_grep"},
@@ -55,7 +54,6 @@ local custom_center = {
 }
 local custom_footer = function()
     local footer = {'','','','','','🎉 Someday I will just like you'}
-    -- print(footer)
     return footer
 end
 
