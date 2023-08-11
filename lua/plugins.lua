@@ -139,6 +139,30 @@ return require("lazy").setup(
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
     -- github
-    "zbirenbaum/copilot.lua",
-    "zbirenbaum/copilot-cmp",
+    --[[ "zbirenbaum/copilot.lua",
+    "zbirenbaum/copilot-cmp", ]]
+    -- chatgpt
+    {
+        "jackMort/ChatGPT.nvim",
+        event = "VeryLazy",
+        config = function()
+            require("chatgpt").setup()
+        end,
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim"
+        }
+    },
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        ---@type Flash.Config
+        opts = {},
+        -- stylua: ignore
+        keys = {
+            { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+            { "<leader><leader>s", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+        },
+    }
 })
