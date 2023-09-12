@@ -59,6 +59,7 @@ return require("lazy").setup(
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "jay-babu/mason-nvim-dap.nvim",
     },
     --Nvim completion client
     {
