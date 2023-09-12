@@ -141,19 +141,6 @@ return require("lazy").setup(
     -- github
     --[[ "zbirenbaum/copilot.lua",
     "zbirenbaum/copilot-cmp", ]]
-    -- chatgpt
-    {
-        "jackMort/ChatGPT.nvim",
-        event = "VeryLazy",
-        config = function()
-            require("chatgpt").setup()
-        end,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim"
-        }
-    },
     {
         "folke/flash.nvim",
         event = "VeryLazy",
