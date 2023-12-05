@@ -140,8 +140,8 @@ return require("lazy").setup(
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
     -- github
-    --[[ "zbirenbaum/copilot.lua",
-    "zbirenbaum/copilot-cmp", ]]
+    "zbirenbaum/copilot.lua",
+    "zbirenbaum/copilot-cmp",
     {
         "folke/flash.nvim",
         event = "VeryLazy",
@@ -152,5 +152,7 @@ return require("lazy").setup(
             { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
             { "<leader><leader>s", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
         },
-    }
+    },
+    -- latex
+    "lervag/vimtex"
 })

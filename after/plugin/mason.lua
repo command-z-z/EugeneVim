@@ -32,5 +32,5 @@ if not statue__ then
 end
 
 mason_nvim_dap.setup({
-    ensure_installed = { "debugpy", "cpptools" }
+    ensure_installed = { "python", "cppdbg" }
 })
