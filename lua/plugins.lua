@@ -71,7 +71,7 @@ return require("lazy").setup(
             "hrsh7th/cmp-path", --for path start with /
             "hrsh7th/cmp-emoji", --for emoji start with :
         }
-    }, 
+    },
     -- code snippets
     {
         "L3MON4D3/LuaSnip",
@@ -154,5 +154,12 @@ return require("lazy").setup(
         },
     },
     -- latex
-    "lervag/vimtex"
+    "lervag/vimtex",
+    {
+    "nvimdev/guard.nvim",
+    -- Builtin configuration, optional
+    dependencies = {
+        "nvimdev/guard-collection",
+    },
+}
 })

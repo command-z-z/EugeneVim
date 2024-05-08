@@ -155,6 +155,6 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", { silent = true })
 keymap("n", "st", "<cmd>Lspsaga term_toggle<CR>", { silent = true })
 -- if you want pass somc cli command into terminal you can do like this
 -- open lazygit in lspsaga float terminal
--- keymap("n", "<A-d>", "<cmd>Lspsaga open_floaterm lazygit<CR>", { silent = true })
+-- keymap("n", "sl", "<cmd>Lspsaga term_toggle lazygit<CR>", { silent = true })
 -- close floaterm
-keymap("t", "st", [[<C-\><C-n><cmd>Lspsaga term_toggle<CR>]], { silent = true })
+keymap("t", "st", "<cmd>Lspsaga term_toggle<CR>", { silent = true })
