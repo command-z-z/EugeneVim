@@ -113,6 +113,7 @@ return require("lazy").setup(
     -- start page
     {
         'glepnir/dashboard-nvim',
+        event = 'VimEnter',
         dependencies = {'nvim-tree/nvim-web-devicons'}
     },
     -- indent
@@ -155,11 +156,24 @@ return require("lazy").setup(
     },
     -- latex
     "lervag/vimtex",
+    -- formatter & Linter
     {
-    "nvimdev/guard.nvim",
-    -- Builtin configuration, optional
-    dependencies = {
-        "nvimdev/guard-collection",
+        "nvimdev/guard.nvim",
+        -- Builtin configuration, optional
+        dependencies = {
+            "nvimdev/guard-collection",
+        },
     },
-}
+    -- save session
+    {
+        'glepnir/dbsession.nvim', cmd = { 'SessionSave', 'SessionDelete', 'SessionLoad'},
+        opts = { }
+    },
+    -- code fold
+    {
+       'kevinhwang91/nvim-ufo',
+       dependencies = {
+           'kevinhwang91/promise-async',
+       }
+    },
 })
