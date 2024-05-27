@@ -1,6 +1,15 @@
 #  (2024-05-27)
 
 
+### Features
+
+* upgrade Node.js version in GitHub workflow ([f1fb089](https://github.com/command-z-z/EugeneVim/commit/f1fb089e6d2965eabd8cc4281e476fe5caefd26d))
+
+
+
+#  (2024-05-27)
+
+
 ### Bug Fixes
 
 * **plugin:** bufferline change version for suppoting neovim 0.10 ([5f86966](https://github.com/command-z-z/EugeneVim/commit/5f8696670bd3a0d52cc35b30528d483468d5bc80))
