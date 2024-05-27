@@ -43,3 +43,25 @@ require('copilot').setup({
 })
 
 require('copilot_cmp').setup({})
+
+local chat = require("CopilotChat")
+
+chat.setup {
+    debug = true, -- Enable debugging
+    model = 'gpt-4',
+    question_header = '## Question ', -- Header to use for user questions
+    answer_header = '## Answer ',
+    -- See Configuration section for rest
+    window = {
+        layout = 'float', -- 'vertical', 'horizontal', 'float', 'replace'
+        width = 0.75, -- fractional width of parent, or absolute width in columns when > 1
+        height = 0.75, -- fractional height of parent, or absolute height in rows when > 1
+        -- Options below only apply to floating windows
+        relative = 'editor', -- 'editor', 'win', 'cursor', 'mouse'
+        border = 'rounded', -- 'none', single', 'double', 'rounded', 'solid', 'shadow'
+        title = 'Copilot Chat', -- title of chat window
+  },
+}
+
+local keymap = vim.keymap.set
+keymap("n", "sc", "<cmd>CopilotChatToggle<CR>", { silent = true })

@@ -144,6 +144,14 @@ return require("lazy").setup(
     "zbirenbaum/copilot.lua",
     "zbirenbaum/copilot-cmp",
     {
+        "CopilotC-Nvim/CopilotChat.nvim",
+        branch = "canary",
+        dependencies = {
+            { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+            { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+        },
+    },
+    {
         "folke/flash.nvim",
         event = "VeryLazy",
         ---@type Flash.Config
