@@ -1,6 +1,10 @@
 #  (2024-05-28)
 
 
+
+#  (2024-05-28)
+
+
 ### Features
 
 * **dap-ui:** Simplify dap-ui setup and change debugger adapter ([a233ba1](https://github.com/command-z-z/EugeneVim/commit/a233ba194379e04c2944c904f19649050566fa98))
