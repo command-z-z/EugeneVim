@@ -22,7 +22,7 @@ if not statue_ then
 end
 
 mason_lspconfig.setup({
-    ensure_installed = { "pyright", "clangd", "lua_ls" },
+    ensure_installed = { "pyright", "lua_ls" },
 })
 
 -- enable to install specified debug dap
@@ -32,7 +32,7 @@ if not statue__ then
 end
 
 mason_nvim_dap.setup({
-    ensure_installed = { "python", "cppdbg" }
+    ensure_installed = { "python" }
 })
 
 -- enable to install specified formatter and Linter
