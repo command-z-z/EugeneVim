@@ -140,6 +140,7 @@ return require("lazy").setup(
     "mfussenegger/nvim-dap-python",
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
+    "nvim-neotest/nvim-nio",
     -- github
     "zbirenbaum/copilot.lua",
     "zbirenbaum/copilot-cmp",
