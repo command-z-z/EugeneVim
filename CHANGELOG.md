@@ -1,3 +1,12 @@
+#  (2024-05-28)
+
+
+### Features
+
+* Update Node.js version and improve Copilot UI ([5757da3](https://github.com/command-z-z/EugeneVim/commit/5757da3935e5783c273a92a774c9005aafd351c9))
+
+
+
 #  (2024-05-27)
 
 
