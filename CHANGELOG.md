@@ -3,6 +3,15 @@
 
 ### Features
 
+* **dap-ui:** Simplify dap-ui setup and change debugger adapter ([a233ba1](https://github.com/command-z-z/EugeneVim/commit/a233ba194379e04c2944c904f19649050566fa98))
+
+
+
+#  (2024-05-28)
+
+
+### Features
+
 * Update Node.js version and improve Copilot UI ([5757da3](https://github.com/command-z-z/EugeneVim/commit/5757da3935e5783c273a92a774c9005aafd351c9))
 
 
