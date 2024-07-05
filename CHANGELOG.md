@@ -1,3 +1,12 @@
+#  (2024-07-05)
+
+
+### Features
+
+* Update gitsigns and lspsaga configurations ([1c53209](https://github.com/command-z-z/EugeneVim/commit/1c53209f4b9d619426910c282c4263be720b19d0))
+
+
+
 #  (2024-05-28)
 
 
