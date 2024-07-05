@@ -37,6 +37,10 @@
   /></a>
 </p>
 
+> 👀 I encourage you to fork this repo and create your own experience. Learn how to tweak and change Neovim to the way YOU like it. This is my cultivation of years of tweaking, use it as a git remote and stay in-touch with upstream for reference or cherry-picking.
+
+## 🌊 Screenshot
+
 <p align="center">
   <img src="./img/dashboard.png"
   height = "40%"
