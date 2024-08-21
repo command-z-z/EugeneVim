@@ -1,3 +1,12 @@
+#  (2024-08-21)
+
+
+### Features
+
+* Update plugin setup and diagnostic config ([8d09fde](https://github.com/command-z-z/EugeneVim/commit/8d09fdef102342d5d8bb555ac376ce1c15438dff))
+
+
+
 #  (2024-07-05)
 
 
