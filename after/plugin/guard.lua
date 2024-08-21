@@ -16,7 +16,7 @@ ft('lua'):fmt('lsp')
 ft('*'):lint('codespell')
 
 -- Call setup() LAST!
-require('guard').setup({
+guard.setup({
     -- Choose to format on every write to a buffer
     fmt_on_save = false,
     -- Use lsp if no formatter was defined for this filetype
