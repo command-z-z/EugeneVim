@@ -1,3 +1,12 @@
+#  (2024-11-13)
+
+
+### Features
+
+* **guard:** refactor guard setup and keymap ([3f61bf2](https://github.com/command-z-z/EugeneVim/commit/3f61bf29f3949aacd78eae2c0c0eb4d738ebd8f7))
+
+
+
 #  (2024-08-21)
 
 
