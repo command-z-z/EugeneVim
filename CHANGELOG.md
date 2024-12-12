@@ -1,3 +1,12 @@
+#  (2024-12-12)
+
+
+### Features
+
+* update CopilotChat branch to main ([2dda344](https://github.com/command-z-z/EugeneVim/commit/2dda344924ecfdb44c76ba2c816ce521f54d80d1))
+
+
+
 #  (2024-11-13)
 
 
