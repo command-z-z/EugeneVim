@@ -1,3 +1,12 @@
+#  (2024-12-13)
+
+
+### Bug Fixes
+
+* Neovim 0.10 introduced built-in commenting support ([fcf2946](https://github.com/command-z-z/EugeneVim/commit/fcf29460883e0dade0860f9af20a0e0f1e480343))
+
+
+
 #  (2024-12-12)
 
 
