@@ -101,8 +101,6 @@ return require("lazy").setup(
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
     },
-    -- quickrun
-    'thinca/vim-quickrun',
     -- docstrings
     {
         "danymat/neogen",
