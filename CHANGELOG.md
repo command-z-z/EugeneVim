@@ -1,6 +1,15 @@
 #  (2024-12-13)
 
 
+### Features
+
+* remove vim-quickrun plugin ([433cec1](https://github.com/command-z-z/EugeneVim/commit/433cec1179ac7f6f0ce1ed4fb5badaa91578322d))
+
+
+
+#  (2024-12-13)
+
+
 ### Bug Fixes
 
 * Neovim 0.10 introduced built-in commenting support ([fcf2946](https://github.com/command-z-z/EugeneVim/commit/fcf29460883e0dade0860f9af20a0e0f1e480343))
