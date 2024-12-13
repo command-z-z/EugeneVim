@@ -101,8 +101,6 @@ return require("lazy").setup(
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
     },
-    -- comment 
-    {"b3nj5m1n/kommentary"},
     -- quickrun
     'thinca/vim-quickrun',
     -- docstrings
