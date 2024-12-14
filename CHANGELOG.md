@@ -1,3 +1,12 @@
+#  (2024-12-14)
+
+
+### Bug Fixes
+
+* markdown plugin can't install ([f794510](https://github.com/command-z-z/EugeneVim/commit/f794510a75db25cb85324697eb27d5f58d99ee8f))
+
+
+
 #  (2024-12-13)
 
 
