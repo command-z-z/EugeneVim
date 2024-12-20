@@ -1,3 +1,12 @@
+#  (2024-12-20)
+
+
+### Bug Fixes
+
+* add custom highlights with catppuccin ([e4413b8](https://github.com/command-z-z/EugeneVim/commit/e4413b8b1fc9ec8c1dfd1d40b5513d7492bb5928))
+
+
+
 #  (2024-12-14)
 
 
