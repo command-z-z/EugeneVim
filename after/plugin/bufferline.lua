@@ -4,7 +4,6 @@ if (not status) then
 end
 
 vim.opt.termguicolors = true
-local frappe = require("catppuccin.palettes").get_palette "frappe"
 bufferline.setup {
     options = {
         close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
@@ -37,15 +36,7 @@ bufferline.setup {
                 separator = true, -- use a "true" to enable the default, or set your own character
             },
         },
-    },
-    highlights = require("catppuccin.groups.integrations.bufferline").get {
-        styles = { "italic", "bold" },
-        custom = {
-            all = {
-                fill = { bg = frappe.base },
-            },
-        },
-    },
+    }
 }
 
 --按键映射
