@@ -1,3 +1,12 @@
+#  (2024-12-20)
+
+
+### Reverts
+
+* Revert "fix: add custom highlights with catppuccin" ([6b7584c](https://github.com/command-z-z/EugeneVim/commit/6b7584c6e98cfa9ed2b2977862b28f7838c50a09))
+
+
+
 #  (2024-12-14)
 
 
