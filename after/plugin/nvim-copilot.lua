@@ -48,7 +48,7 @@ local chat = require("CopilotChat")
 
 chat.setup {
     debug = true, -- Enable debugging
-    model = 'gpt-4',
+    model = 'gpt-4o-2024-11-20',
     question_header = '  User ', -- Header to use for user questions
     answer_header = '  Copilot ',
     -- See Configuration section for rest
