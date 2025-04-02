@@ -1,3 +1,12 @@
+#  (2025-04-02)
+
+
+### Features
+
+* **copilotChat:** update model to `gpt-4o-2024-11-20` ([e63df9c](https://github.com/command-z-z/EugeneVim/commit/e63df9caea265fcb24174abfa4c81c0656e6fd85))
+
+
+
 #  (2024-12-20)
 
 
