@@ -1,3 +1,12 @@
+#  (2025-04-27)
+
+
+### Features
+
+* update LSP client API and Copilot model configuration ([e702d85](https://github.com/command-z-z/EugeneVim/commit/e702d85e576748ed9241504136de995138f12cc6))
+
+
+
 #  (2024-12-20)
 
 
