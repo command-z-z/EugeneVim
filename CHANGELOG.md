@@ -1,3 +1,12 @@
+#  (2025-12-02)
+
+
+### Bug Fixes
+
+* update lsp api function support nvim>0.11 ([987836a](https://github.com/command-z-z/EugeneVim/commit/987836a032ff70d8c65c33a25c93cf09ec4a58c4))
+
+
+
 #  (2025-04-27)
 
 
