@@ -6,8 +6,8 @@ end
 local lspStatus = {
 	function()
 		local msg = "No Active Lsp"
-		local buf_ft = vim.api.nvim_buf_get_option(0, "filetype")
-		local clients = vim.lsp.get_clients()
+		local buf_ft = vim.bo.filetype
+		local clients = vim.lsp.get_clients({ bufnr = 0 })
 		if next(clients) == nil then
 			return msg
 		end
@@ -69,17 +69,17 @@ local layout = {
 		},
 		{
 			"diagnostics",
-			sources = { "nvim_lsp" },
+			sources = { "nvim_diagnostic" },
 			sections = {
 				"info",
 				"error",
 				"warn",
 				"hint",
 			},
-			diagnostic_color = {
+			diagnostics_color = {
 				error = { fg = "#820e2d", bg = "#0f111a" },
 				warn = { fg = "DiagnosticWarn", bg = "#0f111a" },
-				info = { fg = "DiaganosticInfo", bg = "#0f111a" },
+				info = { fg = "DiagnosticInfo", bg = "#0f111a" },
 				hint = { fg = "#92CDE7", bg = "#0f111a" },
 			},
 			colored = true,
@@ -147,7 +147,6 @@ lualine.setup({
 		globalstatus = false,
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline"},
 		always_divide_middle = true,
-		theme = "catppuccin",
+		theme = "catppuccin-mocha",
 	},
 })
-
