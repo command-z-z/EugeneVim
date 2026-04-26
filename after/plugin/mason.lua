@@ -25,24 +25,14 @@ mason_lspconfig.setup({
     ensure_installed = { "pyright", "lua_ls" },
 })
 
--- enable to install specified debug dap
-local statue__, mason_nvim_dap = pcall(require, "mason-nvim-dap")
-if not statue__ then
-    return
-end
-
-mason_nvim_dap.setup({
-    ensure_installed = { "python" }
-})
-
 -- enable to install specified formatter and Linter
 local mason_registry = require("mason-registry")
-Formatter_list = {
+local Formatter_list = {
     "black",
     "isort",
     "docformatter",
 }
-Linter_list = {
+local Linter_list = {
     "flake8",
     "codespell",
 }

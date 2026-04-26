@@ -34,7 +34,6 @@ return require("lazy").setup(
         },
     },
     -- theme
-    'shaunsingh/nord.nvim',
     {
         "catppuccin/nvim",
         name = "catppuccin"
@@ -61,7 +60,6 @@ return require("lazy").setup(
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
-        "jay-babu/mason-nvim-dap.nvim",
     },
     --Nvim completion client
     {
@@ -71,7 +69,6 @@ return require("lazy").setup(
             "hrsh7th/cmp-nvim-lsp", --neovim 
             "hrsh7th/cmp-nvim-lua", --nvim-cmp source for neovim Lua API.
             "hrsh7th/cmp-path", --for path start with /
-            "hrsh7th/cmp-emoji", --for emoji start with :
         }
     },
     -- code snippets
@@ -116,10 +113,6 @@ return require("lazy").setup(
     },
     -- indent
     'lukas-reineke/indent-blankline.nvim',
-    -- bookmark
-    'MattesGroeger/vim-bookmarks',
-    -- telescope to search mark
-    "tom-anders/telescope-vim-bookmarks.nvim",
     -- git 
     {
         'lewis6991/gitsigns.nvim'
@@ -133,12 +126,6 @@ return require("lazy").setup(
         "folke/todo-comments.nvim",
         dependencies = "nvim-lua/plenary.nvim",
     },
-    -- dap 
-    "mfussenegger/nvim-dap",
-    "mfussenegger/nvim-dap-python",
-    "rcarriga/nvim-dap-ui",
-    "theHamsta/nvim-dap-virtual-text",
-    "nvim-neotest/nvim-nio",
     -- github
     "zbirenbaum/copilot.lua",
     "zbirenbaum/copilot-cmp",

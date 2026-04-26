@@ -63,14 +63,11 @@ require("telescope").setup {
 -- To get fzf loaed and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
 require('telescope').load_extension('fzf')
-require('telescope').load_extension('vim_bookmarks')
 require("telescope").load_extension("file_browser")
 
 --按键设置
 vim.api.nvim_set_keymap("n", "<leader>ff", [[<cmd>Telescope find_files<cr>]], {})
 vim.api.nvim_set_keymap("n", "<leader>fg", [[<cmd>Telescope live_grep<cr>]], {})
 vim.api.nvim_set_keymap("n", "<leader>fh", [[<cmd>Telescope help_tags<cr>]], {})
-vim.api.nvim_set_keymap("n", "<leader>ma", [[<cmd>Telescope vim_bookmarks current_file<cr>]], {})
-vim.api.nvim_set_keymap("n", "<leader>mA", [[<cmd>Telescope vim_bookmarks all<cr>]], {})
 vim.api.nvim_set_keymap("n", "<leader>fo", [[<cmd>Telescope oldfiles<cr>]], {})
 vim.api.nvim_set_keymap("n", "<leader>fb", [[<cmd>Telescope file_browser<cr>]], {})

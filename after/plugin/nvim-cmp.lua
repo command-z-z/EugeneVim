@@ -23,7 +23,6 @@ local cmpFormat = function(entry, vim_item)
         nvim_lua    = "[Lua]",
         luasnip     = "[Snip]",
         path        = "[Path]",
-        emoji       = "[Emoji]"
     })[entry.source.name]
     return vim_item
 end
@@ -86,7 +85,5 @@ cmp.setup {
         {name = "nvim_lua"},
         {name = "luasnip"},
         {name = "path"},
-        {name = "emoji"},
     }
 }
-

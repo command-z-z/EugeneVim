@@ -49,7 +49,6 @@ local custom_center = {
     {icon = "  ", icon_hl = 'Title', desc = "Find File                   ", desc_hl = 'String', key = "SPC f f", key_hl = 'Number', action = "Telescope find_files find_command=rg,--hidden,--files"},
     {icon = "  ", icon_hl = 'Title', desc = "File Browser                ", desc_hl = 'String', key = "SPC f b", key_hl = 'Number', action = "Telescope file_browser theme=dropdown previewer=false"},
     {icon = "  ", icon_hl = 'Title', desc = "Find Word                   ", desc_hl = 'String', key = "SPC f g", key_hl = 'Number', action = "Telescope live_grep"},
-    {icon = "  ", icon_hl = 'Title', desc = "Bookmarks                   ", desc_hl = 'String', key = "SPC m A", key_hl = 'Number', action = "Telescope vim_bookmarks all"},
     {icon = "  ", icon_hl = 'Title', desc = "Open Personal dotfiles      ", desc_hl = 'String', key = "SPC e e", key_hl = 'Number', action = "edit $MYVIMRC"},
 }
 local custom_footer = function()

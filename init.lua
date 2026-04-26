@@ -6,4 +6,3 @@ require('mappings')
 require('plugins')
 -- theme
 require('colors.catppuccin')
--- require('colors.nord')
