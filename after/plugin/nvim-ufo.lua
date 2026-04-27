@@ -13,6 +13,11 @@ ufo.setup({
     end
 })
 
--- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
-vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+vim.keymap.set('n', 'zR', ufo.openAllFolds, { desc = 'Open all folds' })
+vim.keymap.set('n', 'zM', ufo.closeAllFolds, { desc = 'Close all folds' })
+vim.keymap.set('n', 'zp', function()
+    local winid = ufo.peekFoldedLinesUnderCursor()
+    if not winid then
+        vim.notify('No folded lines under cursor', vim.log.levels.INFO)
+    end
+end, { desc = 'Peek folded lines' })
