@@ -115,6 +115,11 @@ return require("lazy").setup(
     },
     -- indent
     'lukas-reineke/indent-blankline.nvim',
+    -- keymap hints
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+    },
     -- git 
     {
         'lewis6991/gitsigns.nvim'
