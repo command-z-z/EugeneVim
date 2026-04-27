@@ -1,4 +1,43 @@
 #  (2026-04-27)
+
+
+### Bug Fixes
+
+* **ci:** fetch full history for changelog ([789d46e](https://github.com/command-z-z/EugeneVim/commit/789d46e12e144af0cee10df086fe320b54da2541))
+* markdown plugin can't install ([f794510](https://github.com/command-z-z/EugeneVim/commit/f794510a75db25cb85324697eb27d5f58d99ee8f))
+* Neovim 0.10 introduced built-in commenting support ([fcf2946](https://github.com/command-z-z/EugeneVim/commit/fcf29460883e0dade0860f9af20a0e0f1e480343))
+* **plugin:** bufferline change version for suppoting neovim 0.10 ([5f86966](https://github.com/command-z-z/EugeneVim/commit/5f8696670bd3a0d52cc35b30528d483468d5bc80))
+* **treesitter:** migrate to main branch API ([7c2deed](https://github.com/command-z-z/EugeneVim/commit/7c2deed5d683291994572e8a3cb52bbc67ae2b66))
+* update lsp api function support nvim>0.11 ([987836a](https://github.com/command-z-z/EugeneVim/commit/987836a032ff70d8c65c33a25c93cf09ec4a58c4))
+* update lualine diagnostics config ([bdcb09c](https://github.com/command-z-z/EugeneVim/commit/bdcb09c758bdb68150948038a17f4eba7274707a))
+
+
+### Features
+
+* add code fold plugin ([2e7ed90](https://github.com/command-z-z/EugeneVim/commit/2e7ed907234576db52f60b4adf588a71dff349c0))
+* add gurad plugin ([d80d2be](https://github.com/command-z-z/EugeneVim/commit/d80d2bef884f5d6cb246f931b302d0bd39709476))
+* change ufo fold plugin keymap ([1cf80c2](https://github.com/command-z-z/EugeneVim/commit/1cf80c280556ad23bae88b0d46437695b02b8a05))
+* **copilotChat:** update model to `gpt-4o-2024-11-20` ([e63df9c](https://github.com/command-z-z/EugeneVim/commit/e63df9caea265fcb24174abfa4c81c0656e6fd85))
+* **dap-ui:** Simplify dap-ui setup and change debugger adapter ([a233ba1](https://github.com/command-z-z/EugeneVim/commit/a233ba194379e04c2944c904f19649050566fa98))
+* **git:** add diffview workflow ([f6f6c0c](https://github.com/command-z-z/EugeneVim/commit/f6f6c0ca3827c54bc9739fafb50225fd775f998d))
+* **guard:** refactor guard setup and keymap ([3f61bf2](https://github.com/command-z-z/EugeneVim/commit/3f61bf29f3949aacd78eae2c0c0eb4d738ebd8f7))
+* **keys:** add which-key hints ([2ee0959](https://github.com/command-z-z/EugeneVim/commit/2ee0959a5e94885978721457240de5adbdc6116c))
+* **plugin:** add CopilotChat to Neovim setup ([04c7a91](https://github.com/command-z-z/EugeneVim/commit/04c7a91d68640444a7f5001cfe88ad72bc202f43))
+* remove auto install lsp and dap for cpp(rarely used) ([f12c411](https://github.com/command-z-z/EugeneVim/commit/f12c41141e35366ae196cc3cdceb141930c505e0))
+* remove vim-quickrun plugin ([433cec1](https://github.com/command-z-z/EugeneVim/commit/433cec1179ac7f6f0ce1ed4fb5badaa91578322d))
+* **ufo:** add fold preview keymaps ([57af426](https://github.com/command-z-z/EugeneVim/commit/57af4264e67938eb78a07d53f7ff6a2d186f418f))
+* update CopilotChat branch to main ([2dda344](https://github.com/command-z-z/EugeneVim/commit/2dda344924ecfdb44c76ba2c816ce521f54d80d1))
+* Update gitsigns and lspsaga configurations ([1c53209](https://github.com/command-z-z/EugeneVim/commit/1c53209f4b9d619426910c282c4263be720b19d0))
+* update LSP client API and Copilot model configuration ([e702d85](https://github.com/command-z-z/EugeneVim/commit/e702d85e576748ed9241504136de995138f12cc6))
+* Update Node.js version and improve Copilot UI ([5757da3](https://github.com/command-z-z/EugeneVim/commit/5757da3935e5783c273a92a774c9005aafd351c9))
+* Update plugin setup and diagnostic config ([8d09fde](https://github.com/command-z-z/EugeneVim/commit/8d09fdef102342d5d8bb555ac376ce1c15438dff))
+* upgrade Node.js version in GitHub workflow ([f1fb089](https://github.com/command-z-z/EugeneVim/commit/f1fb089e6d2965eabd8cc4281e476fe5caefd26d))
+
+
+### Reverts
+
+* Revert "chore: update changelog" ([e16ec1e](https://github.com/command-z-z/EugeneVim/commit/e16ec1e73ef5148d1b803af1c7ccd9d484ea6b5b))
+#  (2026-04-27)
 #  (2026-04-26)
 #  (2025-12-02)
 
