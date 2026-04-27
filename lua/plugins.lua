@@ -98,6 +98,8 @@ return require("lazy").setup(
     --grammar highlight
     {
         'nvim-treesitter/nvim-treesitter',
+        lazy = false,
+        branch = 'main',
         build = ':TSUpdate',
     },
     -- docstrings

@@ -1,29 +1,41 @@
-local status, treesitter = pcall(require, "nvim-treesitter.configs")
-if (not status) then
+local status, treesitter = pcall(require, "nvim-treesitter")
+if not status then
   return
 end
 
-require("nvim-treesitter.install").prefer_git = true
+local languages = {
+  "cpp",
+  "c",
+  "python",
+  "lua",
+  "rust",
+  "go",
+  "vim",
+  "markdown",
+  "markdown_inline",
+  "regex",
+  "bash",
+}
+
 treesitter.setup {
-  highlight = {
-    enable = true,
-    disable = {}
-  },
-  indent = {
-    enable = false,
-    disable = {}
-  },
-  ensure_installed = {
-    "cpp",
+  install_dir = vim.fn.stdpath("data") .. "/site",
+}
+
+treesitter.install(languages)
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
     "c",
+    "cpp",
     "python",
     "lua",
     "rust",
     "go",
     "vim",
     "markdown",
-    "markdown_inline",
-    "regex",
-    "bash",
-  }
-}
+    "sh",
+  },
+  callback = function()
+    pcall(vim.treesitter.start)
+  end,
+})
