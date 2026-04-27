@@ -45,15 +45,7 @@ return require("lazy").setup(
         "Shougo/defx.nvim",
         dependencies = {
             "kristijanhusak/defx-icons", -- dexf icon
-            "t9md/vim-choosewin" --windows choose 
         }
-    },
-    --markdown preview
-    {
-        "iamcco/markdown-preview.nvim",
-        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-        ft = { "markdown" },
-        build = ":call mkdp#util#install()",
     },
     --lsp
     {
@@ -102,11 +94,6 @@ return require("lazy").setup(
         branch = 'main',
         build = ':TSUpdate',
     },
-    -- docstrings
-    {
-        "danymat/neogen",
-        dependencies = "nvim-treesitter/nvim-treesitter",
-    },
     -- start page
     {
         'glepnir/dashboard-nvim',
@@ -143,17 +130,6 @@ return require("lazy").setup(
         "folke/todo-comments.nvim",
         dependencies = "nvim-lua/plenary.nvim",
     },
-    -- github
-    "zbirenbaum/copilot.lua",
-    "zbirenbaum/copilot-cmp",
-    {
-        "CopilotC-Nvim/CopilotChat.nvim",
-        branch = "main",
-        dependencies = {
-            { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-            { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-        },
-    },
     {
         "folke/flash.nvim",
         event = "VeryLazy",
@@ -164,21 +140,6 @@ return require("lazy").setup(
             { "<leader>s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
             { "<leader><leader>s", mode = { "n", "o", "x" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
         },
-    },
-    -- latex
-    "lervag/vimtex",
-    -- formatter & Linter
-    {
-        "nvimdev/guard.nvim",
-        -- Builtin configuration, optional
-        dependencies = {
-            "nvimdev/guard-collection",
-        },
-    },
-    -- save session
-    {
-        'glepnir/dbsession.nvim', cmd = { 'SessionSave', 'SessionDelete', 'SessionLoad'},
-        opts = { }
     },
     -- code fold
     {

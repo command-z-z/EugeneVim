@@ -51,17 +51,11 @@ vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", opts)
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprev<Return>", opts)
 vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<Return>", opts)
 vim.api.nvim_set_keymap("n", "<leader>b", ":bd<Return>", opts)
--- window management
--- invoke with '-'
-vim.api.nvim_set_keymap("n", "-", "<Plug>(choosewin)", opts)
 -- 系统剪贴板
 vim.api.nvim_set_keymap("n", "<leader>y", "\"+y", opts)
 vim.api.nvim_set_keymap("n", "<leader>p", "\"+p", opts)
 -- open personal dotfile
 vim.api.nvim_set_keymap("n", "<leader>ee", ":edit $MYVIMRC<CR>", opts)
-
-
-
 
 
 

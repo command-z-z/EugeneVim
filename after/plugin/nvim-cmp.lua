@@ -6,19 +6,11 @@ local luasnip = require("luasnip")
 local lspkind = require("lspkind")
 local cmp = require("cmp")
 
--- add copilot icon support
-lspkind.init({
-  symbol_map = {
-    Copilot = "",
-  },
-})
-
 local cmpFormat = function(entry, vim_item)
     vim_item.kind = lspkind.symbol_map[vim_item.kind] .. " " .. vim_item.kind
     vim_item.kind = vim_item.kind
     vim_item.menu =
     ({
-        copilot     = "[AI]",
         nvim_lsp    = "[LSP]",
         nvim_lua    = "[Lua]",
         luasnip     = "[Snip]",
@@ -80,7 +72,6 @@ cmp.setup {
 
     },
     sources = {
-        {name = "copilot"},
         {name = "nvim_lsp"},
         {name = "nvim_lua"},
         {name = "luasnip"},

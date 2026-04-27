@@ -69,4 +69,3 @@ todo.setup{
 }
 
 vim.api.nvim_set_keymap("n", "<leader>ft", [[<cmd>TodoTelescope<cr>]], {})
-vim.api.nvim_set_keymap("n", "<leader>xt", [[<cmd>TodoTrouble<cr>]], {})

@@ -24,32 +24,3 @@ end
 mason_lspconfig.setup({
     ensure_installed = { "pyright", "lua_ls" },
 })
-
--- enable to install specified formatter and Linter
-local mason_registry = require("mason-registry")
-local Formatter_list = {
-    "black",
-    "isort",
-    "docformatter",
-}
-local Linter_list = {
-    "flake8",
-    "codespell",
-}
-
-local ensure_installed = function()
-    for _, name in pairs(Formatter_list) do
-        if not mason_registry.is_installed(name) then
-            local package = mason_registry.get_package(name)
-            package:install()
-        end
-    end
-    for _, name in pairs(Linter_list) do
-        if not mason_registry.is_installed(name) then
-            local package = mason_registry.get_package(name)
-            package:install()
-        end
-    end
-end
-
-mason_registry.refresh(vim.schedule_wrap(ensure_installed))

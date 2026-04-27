@@ -9,13 +9,13 @@ function defx_my_settings()
   local opts = { noremap = true, silent = true, expr = true }
   local map = vim.api.nvim_buf_set_keymap
   local bufnr = 0
-  map(bufnr, 'n', '<CR>', 'defx#do_action("open", "choose")', opts)
+  map(bufnr, 'n', '<CR>', 'defx#do_action("drop")', opts)
   map(bufnr, 'n', 'yy', 'defx#do_action("copy")', opts)
   map(bufnr, 'n', 'dd', 'defx#do_action("move")', opts)
   map(bufnr, 'n', 'pp', 'defx#do_action("paste")', opts)
-  map(bufnr, 'n', 'l', 'defx#do_action("open", "choose")', opts)
+  map(bufnr, 'n', 'l', 'defx#do_action("drop")', opts)
   map(bufnr, 'n', '<Right>', 'defx#do_action("open")', opts)
-  map(bufnr, 'n', 'i', 'defx#do_action("open", "choose")', opts)
+  map(bufnr, 'n', 'i', 'defx#do_action("drop")', opts)
   map(bufnr, 'n', 'o', 'defx#do_action("open_or_close_tree")', opts)
   map(bufnr, 'n', 'K', 'defx#do_action("new_directory")', opts)
   map(bufnr, 'n', 'T', 'defx#do_action("new_file")', opts)
@@ -51,4 +51,3 @@ vim.fn['defx#custom#column']('git', 'indicators', {
   Deleted   = '✖',
   Unknown   = '?'
 })
-
