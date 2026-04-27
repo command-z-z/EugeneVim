@@ -119,11 +119,21 @@ return require("lazy").setup(
     {
         'lewis6991/gitsigns.nvim'
     },
-    -- todo and trouble tool
     {
-        "folke/trouble.nvim",
-        dependencies = "nvim-tree/nvim-web-devicons",
+        "sindrets/diffview.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-tree/nvim-web-devicons",
+        },
+        cmd = {
+            "DiffviewOpen",
+            "DiffviewFileHistory",
+            "DiffviewClose",
+            "DiffviewToggleFiles",
+            "DiffviewFocusFiles",
+        },
     },
+    -- todo tool
     {
         "folke/todo-comments.nvim",
         dependencies = "nvim-lua/plenary.nvim",

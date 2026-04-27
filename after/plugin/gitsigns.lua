@@ -50,4 +50,19 @@ gitsigns.setup {
     row = 0,
     col = 1
   },
+  on_attach = function(bufnr)
+    local gs = package.loaded.gitsigns
+
+    local function map(mode, lhs, rhs, desc)
+      vim.keymap.set(mode, lhs, rhs, { buffer = bufnr, silent = true, desc = desc })
+    end
+
+    map("n", "<leader>gp", gs.preview_hunk, "Preview hunk")
+    map("n", "<leader>gb", function()
+      gs.blame_line({ full = true })
+    end, "Blame line")
+    map("n", "<leader>gf", gs.diffthis, "Diff current file")
+    map("n", "<leader>gB", gs.toggle_current_line_blame, "Toggle line blame")
+    map("n", "<leader>gL", gs.toggle_deleted, "Toggle deleted lines")
+  end,
 }
