@@ -3,6 +3,13 @@
 
 ### Bug Fixes
 
+* **ci:** limit changelog to pushed commits ([274955a](https://github.com/command-z-z/EugeneVim/commit/274955a258b61b5f0ffa35afc96996a434990a9b))
+
+#  (2026-04-27)
+
+
+### Bug Fixes
+
 * **ci:** fetch full history for changelog ([789d46e](https://github.com/command-z-z/EugeneVim/commit/789d46e12e144af0cee10df086fe320b54da2541))
 * markdown plugin can't install ([f794510](https://github.com/command-z-z/EugeneVim/commit/f794510a75db25cb85324697eb27d5f58d99ee8f))
 * Neovim 0.10 introduced built-in commenting support ([fcf2946](https://github.com/command-z-z/EugeneVim/commit/fcf29460883e0dade0860f9af20a0e0f1e480343))
