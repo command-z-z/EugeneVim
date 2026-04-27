@@ -26,8 +26,9 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 local servers = { "pyright", "lua_ls" }
 
 for _, lsp in ipairs(servers) do
-  vim.lsp.config[lsp] = {
+  vim.lsp.config(lsp, {
     on_attach = on_attach,
     capabilities = capabilities,
-  }
+  })
+  vim.lsp.enable(lsp)
 end
