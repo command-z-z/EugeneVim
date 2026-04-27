@@ -20,16 +20,84 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install conventional-changelog-cli
-        run: npm install -g conventional-changelog-cli
-
       - name: Generate changelog
-        run: conventional-changelog -p angular -i CHANGELOG.md -s
+        env:
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          node <<'NODE'
+          const fs = require('fs');
+          const cp = require('child_process');
+
+          const before = process.env.BEFORE_SHA;
+          const after = process.env.AFTER_SHA;
+          const repository = process.env.REPOSITORY;
+          const zero = /^0+$/.test(before || '');
+          const range = zero ? after : `${before}..${after}`;
+          const output = cp.execFileSync('git', [
+            'log',
+            '--no-merges',
+            '--format=%H%x00%s',
+            range,
+          ], { encoding: 'utf8' }).trim();
+
+          const groups = {
+            fix: { title: 'Bug Fixes', commits: [] },
+            feat: { title: 'Features', commits: [] },
+            revert: { title: 'Reverts', commits: [] },
+          };
+
+          for (const line of output ? output.split('\n') : []) {
+            const [hash, subject] = line.split('\0');
+            if (!hash || !subject || subject === 'chore: update changelog') {
+              continue;
+            }
+
+            let match = subject.match(/^(feat|fix)(?:\(([^)]+)\))?: (.+)$/);
+            if (match) {
+              const [, type, scope, text] = match;
+              groups[type].commits.push({ hash, scope, text });
+              continue;
+            }
+
+            match = subject.match(/^Revert "(.+)"$/);
+            if (match) {
+              groups.revert.commits.push({ hash, text: match[1] });
+            }
+          }
+
+          const date = new Date().toISOString().slice(0, 10);
+          const lines = [`#  (${date})`, ''];
+
+          for (const group of [groups.fix, groups.feat, groups.revert]) {
+            if (group.commits.length === 0) {
+              continue;
+            }
+
+            lines.push('', `### ${group.title}`, '');
+            for (const commit of group.commits) {
+              const short = commit.hash.slice(0, 7);
+              const scope = commit.scope ? `**${commit.scope}:** ` : '';
+              const url = `https://github.com/${repository}/commit/${commit.hash}`;
+              lines.push(`* ${scope}${commit.text} ([${short}](${url}))`);
+            }
+          }
+
+          if (!groups.fix.commits.length && !groups.feat.commits.length && !groups.revert.commits.length) {
+            console.log('No changelog entries for this push.');
+            process.exit(0);
+          }
+
+          const changelog = fs.existsSync('CHANGELOG.md') ? fs.readFileSync('CHANGELOG.md', 'utf8') : '';
+          fs.writeFileSync('CHANGELOG.md', `${lines.join('\n')}\n\n${changelog}`);
+          NODE
 
       - name: Commit and push changelog
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add CHANGELOG.md
+          git diff --cached --quiet && exit 0
           git commit -m 'chore: update changelog'
           git push
