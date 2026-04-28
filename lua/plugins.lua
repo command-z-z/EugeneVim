@@ -51,23 +51,11 @@ return require("lazy").setup(
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
     },
-    --Nvim completion client
+    -- completion and snippets
     {
-        "hrsh7th/nvim-cmp",
-        dependencies = {
-            "onsails/lspkind-nvim", --for prompt message
-            "hrsh7th/cmp-nvim-lsp", --neovim 
-            "hrsh7th/cmp-nvim-lua", --nvim-cmp source for neovim Lua API.
-            "hrsh7th/cmp-path", --for path start with /
-        }
-    },
-    -- code snippets
-    {
-        "L3MON4D3/LuaSnip",
-        dependencies = {
-            "saadparwaiz1/cmp_luasnip", -- Snippets source for nvim-cmp
-            "rafamadriz/friendly-snippets" --代码段合集
-        },
+        "saghen/blink.cmp",
+        version = "1.*",
+        dependencies = { "rafamadriz/friendly-snippets" },
     },
     -- lsp improve 
     { "glepnir/lspsaga.nvim", branch = "main"},

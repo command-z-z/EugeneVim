@@ -21,14 +21,24 @@ for _, sign in ipairs(signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
 end
 
--- config language servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-local servers = { "pyright", "lua_ls" }
+local ok, blink = pcall(require, "blink.cmp")
+local capabilities = ok and blink.get_lsp_capabilities() or vim.lsp.protocol.make_client_capabilities()
 
-for _, lsp in ipairs(servers) do
-  vim.lsp.config(lsp, {
-    on_attach = on_attach,
-    capabilities = capabilities,
-  })
-  vim.lsp.enable(lsp)
+local servers = {
+    pyright = {},
+    lua_ls = {
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { "vim" },
+                },
+            },
+        },
+    },
+}
+
+for lsp, config in pairs(servers) do
+    config.capabilities = capabilities
+    vim.lsp.config(lsp, config)
+    vim.lsp.enable(lsp)
 end
