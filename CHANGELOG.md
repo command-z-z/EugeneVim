@@ -3,6 +3,13 @@
 
 ### Features
 
+* **tooling:** add format and lint workflow ([7f4a805](https://github.com/command-z-z/EugeneVim/commit/7f4a805ac81cc451ee2e1ef0aa30b358ebbeb8cd))
+
+#  (2026-04-28)
+
+
+### Features
+
 * **completion:** migrate to blink cmp ([17999ff](https://github.com/command-z-z/EugeneVim/commit/17999ffb24613cadbdb03c2fcc7e996e8920c40d))
 
 #  (2026-04-27)
