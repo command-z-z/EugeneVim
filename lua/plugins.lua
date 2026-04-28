@@ -38,8 +38,6 @@ return require("lazy").setup(
         "catppuccin/nvim",
         name = "catppuccin"
     },
-    -- ranger
-    "kevinhwang91/rnvimr",
     -- file management
     {
         "Shougo/defx.nvim",
