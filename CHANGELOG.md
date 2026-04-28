@@ -1,3 +1,10 @@
+#  (2026-04-28)
+
+
+### Features
+
+* **completion:** migrate to blink cmp ([17999ff](https://github.com/command-z-z/EugeneVim/commit/17999ffb24613cadbdb03c2fcc7e996e8920c40d))
+
 #  (2026-04-27)
 
 
