@@ -27,6 +27,7 @@ return {
                 end
 
                 map("<leader>gp", gs.preview_hunk, "Preview hunk")
+                map("<leader>gr", gs.reset_hunk, "Reset hunk")
                 map("<leader>gb", function()
                     gs.blame_line({ full = true })
                 end, "Blame line")

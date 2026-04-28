@@ -53,53 +53,151 @@ return {
         event = "VeryLazy",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
-            local function lsp_status()
-                local clients = vim.lsp.get_clients({ bufnr = 0 })
-                if next(clients) == nil then
-                    return "No Active Lsp"
-                end
-
-                local buf_ft = vim.bo.filetype
-                for _, client in ipairs(clients) do
-                    local filetypes = client.config.filetypes
-                    if filetypes and vim.tbl_contains(filetypes, buf_ft) then
-                        return client.name
+            local lsp_status = {
+                function()
+                    local msg = "No Active Lsp"
+                    local buf_ft = vim.bo.filetype
+                    local clients = vim.lsp.get_clients({ bufnr = 0 })
+                    if next(clients) == nil then
+                        return msg
                     end
-                end
+                    for _, client in ipairs(clients) do
+                        local filetypes = client.config.filetypes
+                        if filetypes and vim.tbl_contains(filetypes, buf_ft) then
+                            return client.name
+                        end
+                    end
+                    return msg
+                end,
+                color = "StatusLine",
+                separator = { left = "", right = "" },
+            }
 
-                return "No Active Lsp"
-            end
+            local layout = {
+                lualine_a = {
+                    {
+                        function()
+                            return ""
+                        end,
+                        separator = { left = "", right = "" },
+                    },
+                },
+                lualine_b = {
+                    {
+                        "filetype",
+                        icon_only = true,
+                        colored = true,
+                        color = "StatusLine",
+                    },
+                    {
+                        "filename",
+                        color = "StatusLine",
+                    },
+                    {
+                        "branch",
+                        icon = "",
+                        color = { bg = "#292c3c", fg = "#c296eb" },
+                    },
+                    {
+                        "diff",
+                        colored = true,
+                        symbols = {
+                            added = "",
+                            modified = "",
+                            removed = "",
+                        },
+                        color = "StatusLine",
+                    },
+                },
+                lualine_c = {
+                    {
+                        function()
+                            return ""
+                        end,
+                        color = { bg = "#8FCDA9", fg = "#121319" },
+                        separator = { left = "", right = "" },
+                    },
+                    {
+                        "diagnostics",
+                        sources = { "nvim_diagnostic" },
+                        sections = {
+                            "info",
+                            "error",
+                            "warn",
+                            "hint",
+                        },
+                        diagnostics_color = {
+                            error = { fg = "#820e2d", bg = "#0f111a" },
+                            warn = { fg = "DiagnosticWarn", bg = "#0f111a" },
+                            info = { fg = "DiagnosticInfo", bg = "#0f111a" },
+                            hint = { fg = "#92CDE7", bg = "#0f111a" },
+                        },
+                        colored = true,
+                        update_in_insert = true,
+                        always_visible = false,
+                        symbols = {
+                            error = " ",
+                            warn = " ",
+                            hint = " ",
+                            info = " ",
+                        },
+                        separator = { left = "", right = "" },
+                    },
+                },
+                lualine_x = { lsp_status },
+                lualine_y = {},
+                lualine_z = {
+                    {
+                        "filesize",
+                        color = "StatusLine",
+                    },
+                    {
+                        function()
+                            return ""
+                        end,
+                        separator = { left = "", right = "" },
+                    },
+                    {
+                        "progress",
+                        color = "StatusLine",
+                    },
+                    {
+                        function()
+                            return ""
+                        end,
+                        separator = { left = "", right = "" },
+                    },
+                    {
+                        "location",
+                        color = "StatusLine",
+                    },
+                    {
+                        function()
+                            return ""
+                        end,
+                        separator = { left = "", right = "" },
+                    },
+                },
+            }
+
+            local no_layout = {
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = {},
+                lualine_x = {},
+                lualine_y = {},
+                lualine_z = {},
+            }
 
             require("lualine").setup({
-                sections = {
-                    lualine_a = { "mode" },
-                    lualine_b = { "branch", "diff" },
-                    lualine_c = { { "filename", path = 1 } },
-                    lualine_x = {
-                        {
-                            "diagnostics",
-                            sources = { "nvim_diagnostic" },
-                            symbols = { error = "E:", warn = "W:", info = "I:", hint = "H:" },
-                        },
-                        lsp_status,
-                        "filetype",
-                    },
-                    lualine_y = { "progress" },
-                    lualine_z = { "location" },
-                },
-                inactive_sections = {
-                    lualine_a = {},
-                    lualine_b = {},
-                    lualine_c = { "filename" },
-                    lualine_x = { "location" },
-                    lualine_y = {},
-                    lualine_z = {},
-                },
+                sections = layout,
+                inactive_sections = no_layout,
                 options = {
                     icons_enabled = true,
-                    globalstatus = true,
-                    disabled_filetypes = { statusline = { "dashboard" } },
-                    theme = "catppuccin",
+                    globalstatus = false,
+                    disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+                    always_divide_middle = true,
+                    theme = "catppuccin-frappe",
                 },
             })
         end,
@@ -107,7 +205,7 @@ return {
 
     {
         "akinsho/bufferline.nvim",
-        event = "VeryLazy",
+        lazy = false,
         version = "*",
         dependencies = { "nvim-tree/nvim-web-devicons" },
         keys = function()
@@ -142,6 +240,21 @@ return {
                 always_show_bufferline = true,
             },
         },
+        config = function(_, opts)
+            require("bufferline").setup(opts)
+
+            local group = vim.api.nvim_create_augroup("eugene_bufferline_visibility", { clear = true })
+            local function update_tabline()
+                vim.o.showtabline = vim.bo.filetype == "dashboard" and 0 or 2
+            end
+
+            vim.api.nvim_create_autocmd({ "BufEnter", "FileType", "VimEnter" }, {
+                group = group,
+                callback = update_tabline,
+            })
+
+            update_tabline()
+        end,
     },
 
     {
@@ -155,6 +268,9 @@ return {
                     header = {
                         "",
                         "",
+                        "",
+                        "",
+                        "",
                         "          ▀████▀▄▄              ▄█ ",
                         "            █▀    ▀▀▄▄▄▄▄    ▄▄▀▀█ ",
                         "    ▄        █          ▀▀▀▀▄  ▄▀  ",
@@ -165,9 +281,14 @@ return {
                         "    █  ▄▀  █    ▀██▀    ▀▀ ▀▀  ▄▀  ",
                         "   █   █  █      ▄▄           ▄▀   ",
                         "",
+                        "",
+                        "",
+                        "",
+                        "",
                     },
                     center = {
                         { icon = "S  ", desc = "Restore Session            ", key = "SPC q s", action = "lua require('persistence').load()" },
+                        { icon = "O  ", desc = "Recent Files               ", key = "SPC f o", action = "Telescope oldfiles theme=dropdown previewer=false" },
                         { icon = "F  ", desc = "Find File                  ", key = "SPC f f", action = "Telescope find_files" },
                         { icon = "G  ", desc = "Find Word                  ", key = "SPC f g", action = "Telescope live_grep" },
                         { icon = "B  ", desc = "File Browser               ", key = "SPC f b", action = "Telescope file_browser" },
