@@ -50,7 +50,11 @@ return require("lazy").setup(
         "neovim/nvim-lspconfig",
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
+    -- format and lint
+    { "stevearc/conform.nvim" },
+    { "mfussenegger/nvim-lint" },
     -- completion and snippets
     {
         "saghen/blink.cmp",

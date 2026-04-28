@@ -50,7 +50,7 @@ vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", opts)
 -- Open current directory
 vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprev<Return>", opts)
 vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<Return>", opts)
-vim.api.nvim_set_keymap("n", "<leader>b", ":bd<Return>", opts)
+vim.api.nvim_set_keymap("n", "<leader>bd", ":bd<Return>", opts)
 -- 系统剪贴板
 vim.api.nvim_set_keymap("n", "<leader>y", "\"+y", opts)
 vim.api.nvim_set_keymap("n", "<leader>p", "\"+p", opts)
