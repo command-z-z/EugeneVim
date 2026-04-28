@@ -1,64 +1,59 @@
 -- leader set to space
 vim.g.mapleader = " "
 
-local opts = { silent = true, noremap = true}
+local opts = { silent = true, noremap = true }
+local keymap = vim.keymap.set
 -----------------------------------------------------------------------------
 -- window
 -------------------------------------------------------------------------------
 -- Split window
-vim.api.nvim_set_keymap("n", "ss", ":split<Return><C-w>w", opts)
-vim.api.nvim_set_keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
+keymap("n", "ss", "<cmd>split<CR><C-w>w", vim.tbl_extend("force", opts, { desc = "Split window horizontally" }))
+keymap("n", "sv", "<cmd>vsplit<CR><C-w>w", vim.tbl_extend("force", opts, { desc = "Split window vertically" }))
 -- Move window
-vim.api.nvim_set_keymap("n", "sh", "<C-w>h", opts)
-vim.api.nvim_set_keymap("n", "sk", "<C-w>k", opts)
-vim.api.nvim_set_keymap("n", "sj", "<C-w>j", opts)
-vim.api.nvim_set_keymap("n", "sl", "<C-w>l", opts)
+keymap("n", "sh", "<C-w>h", vim.tbl_extend("force", opts, { desc = "Move to left window" }))
+keymap("n", "sk", "<C-w>k", vim.tbl_extend("force", opts, { desc = "Move to upper window" }))
+keymap("n", "sj", "<C-w>j", vim.tbl_extend("force", opts, { desc = "Move to lower window" }))
+keymap("n", "sl", "<C-w>l", vim.tbl_extend("force", opts, { desc = "Move to right window" }))
 -- Resize window
-vim.api.nvim_set_keymap("n", "<M-left>", "<C-w><", opts)
-vim.api.nvim_set_keymap("n", "<M-right>", "<C-w>>", opts)
-vim.api.nvim_set_keymap("n", "<M-up>", "<C-w>+", opts)
-vim.api.nvim_set_keymap("n", "<M-down>", "<C-w>-", opts)
+keymap("n", "<M-left>", "<C-w><", vim.tbl_extend("force", opts, { desc = "Decrease window width" }))
+keymap("n", "<M-right>", "<C-w>>", vim.tbl_extend("force", opts, { desc = "Increase window width" }))
+keymap("n", "<M-up>", "<C-w>+", vim.tbl_extend("force", opts, { desc = "Increase window height" }))
+keymap("n", "<M-down>", "<C-w>-", vim.tbl_extend("force", opts, { desc = "Decrease window height" }))
 -- insert mode to move cursor
-vim.api.nvim_set_keymap("i", "<C-h>", "<Left>", opts)
-vim.api.nvim_set_keymap("i", "<C-j>", "<Down>", opts)
-vim.api.nvim_set_keymap("i", "<C-k>", "<Up>", opts)
-vim.api.nvim_set_keymap("i", "<C-l>", "<Right>", opts)
-vim.api.nvim_set_keymap("i", "<C-d>", "<Delete>", opts)
+keymap("i", "<C-h>", "<Left>", vim.tbl_extend("force", opts, { desc = "Move cursor left" }))
+keymap("i", "<C-j>", "<Down>", vim.tbl_extend("force", opts, { desc = "Move cursor down" }))
+keymap("i", "<C-k>", "<Up>", vim.tbl_extend("force", opts, { desc = "Move cursor up" }))
+keymap("i", "<C-l>", "<Right>", vim.tbl_extend("force", opts, { desc = "Move cursor right" }))
+keymap("i", "<C-d>", "<Delete>", vim.tbl_extend("force", opts, { desc = "Delete next character" }))
 -- jk equal <Esc>
-vim.api.nvim_set_keymap("i", "jk", "<Esc>", opts)
--- to start of end line 
-vim.api.nvim_set_keymap("n", "L", "$", opts)
-vim.api.nvim_set_keymap("n", "H", "^", opts)
-vim.api.nvim_set_keymap("v", "L", "$", opts)
-vim.api.nvim_set_keymap("v", "H", "^", opts)
+keymap("i", "jk", "<Esc>", vim.tbl_extend("force", opts, { desc = "Exit insert mode" }))
+-- to start of end line
+keymap("n", "L", "$", vim.tbl_extend("force", opts, { desc = "Go to end of line" }))
+keymap("n", "H", "^", vim.tbl_extend("force", opts, { desc = "Go to first non-blank character" }))
+keymap("v", "L", "$", vim.tbl_extend("force", opts, { desc = "Select to end of line" }))
+keymap("v", "H", "^", vim.tbl_extend("force", opts, { desc = "Select to first non-blank character" }))
 -- next five line
-vim.api.nvim_set_keymap("", "<C-j>", "5j", opts)
-vim.api.nvim_set_keymap("", "<C-k>", "5k", opts)
-vim.api.nvim_set_keymap("", "<C-h>", "5h", opts)
-vim.api.nvim_set_keymap("", "<C-l>", "5l", opts)
+keymap({ "n", "v", "o" }, "<C-j>", "5j", vim.tbl_extend("force", opts, { desc = "Move down 5 lines" }))
+keymap({ "n", "v", "o" }, "<C-k>", "5k", vim.tbl_extend("force", opts, { desc = "Move up 5 lines" }))
+keymap({ "n", "v", "o" }, "<C-h>", "5h", vim.tbl_extend("force", opts, { desc = "Move left 5 characters" }))
+keymap({ "n", "v", "o" }, "<C-l>", "5l", vim.tbl_extend("force", opts, { desc = "Move right 5 characters" }))
 -- save
-vim.api.nvim_set_keymap("n", "s", ":w<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-s>", ":w<CR>", opts)
-vim.api.nvim_set_keymap("i", "<C-s>", "<Esc> :w<CR>", opts)
+keymap("n", "s", "<cmd>w<CR>", vim.tbl_extend("force", opts, { desc = "Save file" }))
+keymap("n", "<C-s>", "<cmd>w<CR>", vim.tbl_extend("force", opts, { desc = "Save file" }))
+keymap("i", "<C-s>", "<Esc><cmd>w<CR>", vim.tbl_extend("force", opts, { desc = "Save file" }))
 -- quit
-vim.api.nvim_set_keymap("n", "Q", ":q<CR>", opts)
+keymap("n", "Q", "<cmd>q<CR>", vim.tbl_extend("force", opts, { desc = "Quit window" }))
 -- select all
-vim.api.nvim_set_keymap("n", "<C-a>", "ggVG", opts)
+keymap("n", "<C-a>", "ggVG", vim.tbl_extend("force", opts, { desc = "Select all" }))
 -------------------------------------------------------------------------------
 -- Buffers
 -------------------------------------------------------------------------------
 -- Open current directory
-vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprev<Return>", opts)
-vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<Return>", opts)
-vim.api.nvim_set_keymap("n", "<leader>bd", ":bd<Return>", opts)
+keymap("n", "<S-Tab>", "<cmd>bprev<CR>", vim.tbl_extend("force", opts, { desc = "Previous buffer" }))
+keymap("n", "<Tab>", "<cmd>bnext<CR>", vim.tbl_extend("force", opts, { desc = "Next buffer" }))
+keymap("n", "<leader>bd", "<cmd>bd<CR>", vim.tbl_extend("force", opts, { desc = "Delete buffer" }))
 -- 系统剪贴板
-vim.api.nvim_set_keymap("n", "<leader>y", "\"+y", opts)
-vim.api.nvim_set_keymap("n", "<leader>p", "\"+p", opts)
+keymap("n", "<leader>y", '"+y', vim.tbl_extend("force", opts, { desc = "Yank to system clipboard" }))
+keymap("n", "<leader>p", '"+p', vim.tbl_extend("force", opts, { desc = "Paste from system clipboard" }))
 -- open personal dotfile
-vim.api.nvim_set_keymap("n", "<leader>ee", ":edit $MYVIMRC<CR>", opts)
-
-
-
-
-
-
+keymap("n", "<leader>ee", "<cmd>edit $MYVIMRC<CR>", vim.tbl_extend("force", opts, { desc = "Edit Neovim config" }))

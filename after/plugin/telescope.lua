@@ -84,11 +84,11 @@ require("telescope").load_extension("fzf")
 require("telescope").load_extension("file_browser")
 
 --按键设置
-vim.api.nvim_set_keymap("n", "<leader>ff", [[<cmd>Telescope find_files<cr>]], {})
-vim.api.nvim_set_keymap("n", "<leader>fg", [[<cmd>Telescope live_grep<cr>]], {})
-vim.api.nvim_set_keymap("n", "<leader>fh", [[<cmd>Telescope help_tags<cr>]], {})
-vim.api.nvim_set_keymap("n", "<leader>fo", [[<cmd>Telescope oldfiles<cr>]], {})
-vim.api.nvim_set_keymap("n", "<leader>fb", [[<cmd>Telescope file_browser<cr>]], {})
+vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>", { silent = true, desc = "Find files" })
+vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { silent = true, desc = "Live grep" })
+vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { silent = true, desc = "Find help" })
+vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { silent = true, desc = "Find old files" })
+vim.keymap.set("n", "<leader>fb", "<cmd>Telescope file_browser<cr>", { silent = true, desc = "File browser" })
 vim.keymap.set("n", "<leader>bb", "<cmd>Telescope buffers<cr>", { silent = true, desc = "Pick buffer" })
 
 local function current_buffer_dir()
